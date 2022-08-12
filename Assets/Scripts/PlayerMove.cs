@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -14,19 +15,19 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float maxY;
     [SerializeField] float minY;
 
-  
+    //bool isDead;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //isDead = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        BoundriesCheck(); 
+        BoundriesCheck();
     }
     void BoundriesCheck()
     {
@@ -50,6 +51,8 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Rock"))
         {
             Debug.Log("Rock", this);
+            SceneManager.LoadScene("GameoverScene");
+
         }
     }
 
