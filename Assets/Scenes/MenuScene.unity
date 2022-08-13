@@ -4752,6 +4752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4964241df2968a947b98f92d0a4584b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startButton: {fileID: 947082761}
 --- !u!4 &640203518
 Transform:
   m_ObjectHideFlags: 0
@@ -7034,19 +7035,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 947082762}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640203517}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: StartAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &947082762
 MonoBehaviour:
   m_ObjectHideFlags: 0

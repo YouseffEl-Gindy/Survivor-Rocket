@@ -30,7 +30,7 @@ public class RockSpawner : MonoBehaviour
         float playerY = Player.transform.position.y;
         transform.position = new Vector3(Player.transform.position.x - xDistanceOfPlayer, playerY, transform.position.z);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Rock"))
         {

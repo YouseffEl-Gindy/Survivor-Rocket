@@ -51,6 +51,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Rock"))
         {
             Debug.Log("Rock", this);
+            ScoreManger.Instance.OnDead();
             SceneManager.LoadScene("GameoverScene");
 
         }

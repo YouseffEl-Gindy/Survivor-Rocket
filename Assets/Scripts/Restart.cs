@@ -18,6 +18,7 @@ public class Restart : MonoBehaviour
     }
     public void RestartButton()
     {
+        ScoreManger.Instance.DestroyAll();
         SceneManager.LoadScene("GameScene");
     }
 }
