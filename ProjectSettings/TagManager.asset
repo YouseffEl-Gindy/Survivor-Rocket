@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Stars
   - Rock
+  - LinearRock
   layers:
   - Default
   - TransparentFX

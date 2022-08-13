@@ -18,6 +18,7 @@ public class Menu : MonoBehaviour
     }
     public void MenuButton()
     {
+        ScoreManger.Instance.DestroyAll();
         SceneManager.LoadScene("MenuScene");
     }
 }
