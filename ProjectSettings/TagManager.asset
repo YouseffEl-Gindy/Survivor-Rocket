@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Stars
   - Rock
-  - LinearRock
+  - MovingRock
   layers:
   - Default
   - TransparentFX
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Stars
     uniqueID: 289243965
+    locked: 0
+  - name: RockPath
+    uniqueID: 709774551
     locked: 0
   - name: Playground
     uniqueID: 3588586605

@@ -4,13 +4,13 @@ using UnityEngine;
 
 
 
-public class LinearRockMovement : MonoBehaviour
+public class MovingRock : MonoBehaviour
 {
     [SerializeField] Transform[] Positions;
     [SerializeField] float speed;
     Transform nextPos;
     int nextPosIndex;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +26,10 @@ public class LinearRockMovement : MonoBehaviour
     }
     void MoveObstacle()
     {
-        if(transform.position == nextPos.position)
+        if (transform.position == nextPos.position)
         {
             nextPosIndex++;
-            if(nextPosIndex >= Positions.Length)
+            if (nextPosIndex >= Positions.Length)
             {
                 nextPosIndex = 0;
             }
