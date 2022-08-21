@@ -11,6 +11,8 @@ public class ScoreManger : MonoBehaviour
 
     public static ScoreManger Instance;
 
+    [SerializeField]float prizeValue;
+
     bool isDead;
     private void Awake()
     {
@@ -46,4 +48,13 @@ public class ScoreManger : MonoBehaviour
     {
         isDead = true;
     }
+    public float GetScore()
+    {
+        return score;
+    }
+    public void CollectPrize()
+    {
+        score += prizeValue;
+    }
+
 }

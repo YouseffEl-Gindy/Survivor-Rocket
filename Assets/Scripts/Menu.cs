@@ -19,6 +19,7 @@ public class Menu : MonoBehaviour
     public void MenuButton()
     {
         ScoreManger.Instance.DestroyAll();
+        SpeedText.Instance.DestroyGameObject();
         SceneManager.LoadScene("MenuScene");
     }
 }

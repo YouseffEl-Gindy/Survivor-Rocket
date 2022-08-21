@@ -15,8 +15,12 @@ public class RockSpawner : MonoBehaviour
     [SerializeField] float maxY;
     [SerializeField] float minY;
 
-    // X offset of collision game object
-    [SerializeField] float xOffset;
+    // X offset of collision game static object
+    [SerializeField] float xOffsetStatic;
+
+    // X offset of collision game moving object
+    [SerializeField] float xOffsetMoving;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +38,14 @@ public class RockSpawner : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rock"))
         {
-            Debug.Log("Rock", this);
             float yRange = Random.Range(minY, maxY);
-            Debug.Log(yRange, this);
-            collision.transform.position = new Vector3(collision.transform.position.x + xOffset, yRange, collision.transform.position.z);
+            collision.transform.position = new Vector3(collision.transform.position.x + xOffsetStatic, yRange, collision.transform.position.z);
+        }
+        else if(collision.gameObject.CompareTag("MovingRock"))
+        {
+            Transform parentObject = collision.transform.parent;
+            parentObject.transform.position = new Vector3(parentObject.transform.position.x + xOffsetMoving, parentObject.transform.position.y, parentObject.transform.position.z);                 
+            //collision.transform.position = new Vector3(collision.transform.position.x + xOffsetMoving , collision.transform.position.y , collision.transform.position.z);
         }
     }
 }

@@ -48,14 +48,33 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Rock"))
+        if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("MovingRock"))
         {
-            Debug.Log("Rock", this);
             ScoreManger.Instance.OnDead();
             SceneManager.LoadScene("GameoverScene");
 
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Prize"))
+        {
+            
+            if(!collision.GetComponent<MovingPrize>().IsCollected())
+            {
+                collision.GetComponent<MovingPrize>().OnCollect();
+                collision.GetComponent<MovingPrize>().HideSprites();
+
+                ScoreManger.Instance.CollectPrize();
+                DifficultyController.Instance.CollectPrize();
+
+                ViewController.Instance.IncrementSpeedOfRocks(0.5f);
+            }    
+            
+        }
+    }
+
 
 
 }

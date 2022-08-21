@@ -20,9 +20,10 @@ public class MovingRock : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         MoveObstacle();
+
     }
     void MoveObstacle()
     {
@@ -40,4 +41,12 @@ public class MovingRock : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, nextPos.position, speed * Time.deltaTime);
         }
     }
+    public void IncremntSpeed(float value)
+    {
+        speed+= value;
+    }
+
+
+
+
 }

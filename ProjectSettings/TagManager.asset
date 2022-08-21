@@ -7,6 +7,7 @@ TagManager:
   - Stars
   - Rock
   - MovingRock
+  - Prize
   layers:
   - Default
   - TransparentFX
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: RockPath
     uniqueID: 709774551
+    locked: 0
+  - name: Prize
+    uniqueID: 2869380109
     locked: 0
   - name: Playground
     uniqueID: 3588586605
