@@ -50,6 +50,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("MovingRock"))
         {
+            AudioSystem.Instance.PlayDieAudio();
+
             ScoreManger.Instance.OnDead();
             SceneManager.LoadScene("GameoverScene");
 
@@ -63,6 +65,8 @@ public class PlayerMove : MonoBehaviour
             
             if(!collision.GetComponent<MovingPrize>().IsCollected())
             {
+                AudioSystem.Instance.PlayPrizeAudio();
+
                 collision.GetComponent<MovingPrize>().OnCollect();
                 collision.GetComponent<MovingPrize>().HideSprites();
 
